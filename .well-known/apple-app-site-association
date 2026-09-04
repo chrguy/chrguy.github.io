@@ -1,1 +1,12 @@
-
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["SAMH2SG2SF.com.chrguy.kiplou"],
+        "components": [
+          { "/": "/kiplou/rejoindre/*", "comment": "Invitation à une liste partagée Kiplou" }
+        ]
+      }
+    ]
+  }
+}
