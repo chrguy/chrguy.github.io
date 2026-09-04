@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Invitation Kiplou</title>
+<style>
+body{font-family:-apple-system,system-ui,sans-serif;margin:0;padding:40px 24px;text-align:center;color:#1c1c1e;background:#f7f9fa}
+h1{font-size:1.5rem}.code{font-family:ui-monospace,Menlo,monospace;font-size:2rem;letter-spacing:.3em;font-weight:700;background:#ece6f7;border-radius:14px;padding:12px 20px;display:inline-block;margin:12px 0}
+a.btn{display:block;max-width:360px;margin:12px auto;padding:16px 22px;border-radius:14px;background:#7b3fb3;color:#fff;text-decoration:none;font-weight:600}
+a.btn.sec{background:#ece6f7;color:#7b3fb3}p.small{color:#6e6e73;font-size:.9rem}
+</style></head>
+<body>
+<h1>Tu es invité·e à rejoindre une liste Kiplou</h1>
+<p>Code d'invitation</p>
+<div class="code" id="code">——————</div>
+<a class="btn" id="ouvrir" href="#">Ouvrir dans Kiplou</a>
+<a class="btn sec" href="https://apps.apple.com/app/id6761292713">Je n'ai pas Kiplou (iPhone)</a>
+<a class="btn sec" href="https://play.google.com/store/apps/details?id=com.chrguy.kiplou">Je n'ai pas Kiplou (Android)</a>
+<p class="small">Si l'app ne s'ouvre pas : ouvre Kiplou → Listes → « Rejoindre une liste » et saisis le code ci-dessus.</p>
+<script>
+(function(){
+  var q=new URLSearchParams(location.search).get('code')||'';
+  var m=location.pathname.match(/\/kiplou\/rejoindre\/([A-Za-z0-9]{6})\/?$/);
+  var code=(q||(m?m[1]:'')).toUpperCase().replace(/[^A-Z2-9]/g,'').slice(0,6);
+  if(code.length===6){
+    document.getElementById('code').textContent=code;
+    var lien='kiplou://rejoindre/'+code;
+    var b=document.getElementById('ouvrir'); b.href=lien;
+    // Tentative d'ouverture automatique (repli si le lien universel n'a pas pris).
+    setTimeout(function(){ location.href=lien; }, 400);
+  }
+})();
+</script>
+</body></html>
