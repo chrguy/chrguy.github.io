@@ -1,10 +1,14 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "com.chrguy.kiplou",
       "sha256_cert_fingerprints": [
+        "6A:1C:CE:1B:BA:F2:92:4E:C4:C4:81:3C:4F:EC:87:19:AA:49:65:97:0A:74:F8:01:B6:67:74:BC:02:BD:6B:4A",
+        "18:63:64:69:50:3F:0A:42:E7:CE:EB:A2:96:43:77:28:79:AC:B2:F3:32:AE:EA:12:1A:3E:74:E6:95:AC:8E:45",
         "04:B7:F4:04:CA:81:21:E7:B5:31:33:77:F8:70:88:F3:65:4A:30:8F:A9:06:E0:27:48:C9:CA:F7:B3:AE:0E:2C"
       ]
     }
